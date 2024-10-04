@@ -9,9 +9,10 @@ set -e
 # Run required migrations
 export FLASK_APP=core/server.py
 
+# Uncomment if you need to initialize migrations
 # flask db init -d core/migrations/
 # flask db migrate -m "Initial migration." -d core/migrations/
 # flask db upgrade -d core/migrations/
 
-# Run server
-gunicorn -c gunicorn_config.py core.server:app
+# Run server using Flask's built-in server
+flask run
